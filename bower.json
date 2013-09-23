@@ -1,0 +1,23 @@
+{
+  "name": "stylHelper",
+  "version": "0.0.1",
+  "homepage": "https://github.com/raqystyle/stylhelper",
+  "authors": [
+    "Ivan Demchenko <raqy.style@gmail.com>"
+  ],
+  "description": "A small helper for stylus projects",
+  "main": "helper.styl",
+  "keywords": [
+    "helper",
+    "stylus",
+    "functions"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "stylHelper",
+  "version": "0.0.1",
+  "description": "Helper for stylus projects",
+  "main": "helper.styl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raqystyle/stylhelper"
+  },
+  "keywords": [
+    "stylus",
+    "helper",
+    "functions"
+  ],
+  "author": "Demchenko Ivan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/raqystyle/stylhelper/issues"
+  }
+}

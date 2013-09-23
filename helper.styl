@@ -1,0 +1,127 @@
+// VENDOR EXTENSIONS
+vendor(prop, arg)
+  -webkit-{prop} arg
+  -moz-{prop} arg
+  -ms-{prop} arg
+  -o-{prop} arg
+  {prop} arg
+
+-iterator(args)
+  i = 0
+  for arg in args
+    if args[i]
+      {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+    i += 1
+
+// POSITIONING
+// ----------------------------
+
+// Absolute positioning + coordinates
+//
+// Usage
+//    absolute: <top[,value]> <left[,value]> <bottom[,value]> <right[,value]>
+//
+// Hint: the order of coordinates doesn't matter.
+//
+// Example:
+//    absoulte: top 5px left 20% bottom
+//
+// The output:
+//    position: absolute;
+//    top: 5px;
+//    left: 20%;
+//    bottom: 0;
+absolute()
+  position absolute
+  -iterator(arguments)
+
+// Fixed positioning
+// Pretty much the same as `absoute()`
+fixed()
+  position fixed
+  -iterator(arguments)
+
+
+// BACKGROUND
+// ----------------------------
+
+// Usage
+//    bg: <color> <opacity>
+//
+// Example:
+//    bg: white .3
+//
+// The output:
+//    background-color: rgba(255,255,255,0.30);
+
+// Example:
+//    bg: red
+//
+// The output:
+//    background-color: #f00;
+bg()
+  clr = arguments[0]
+  opac = arguments[1]
+  if opac
+    background-color rgba(clr, opac)
+  else
+    background-color rgb(clr)
+
+// DIMENTIONS
+// ----------------------------
+
+// Usage:
+//    dims: <width> <height>
+//
+// Example:
+//    dims: 30px 10%
+//
+// The output:
+//    width: 30px;
+//    height: 10%;
+dims()
+  w = arguments[0]
+  h = arguments[1]
+  if w && w is a 'unit'
+    width w
+
+  if h && h is a 'unit'
+    height h
+
+// POSITIONING
+// ----------------------------
+
+// Usage:
+//    pos: <top> <left>
+//
+// Example:
+//    pos: 2px 1px
+//
+// The output:
+//      top: 2px;
+//      left: 1px;
+pos()
+  t = arguments[0]
+  l = arguments[1]
+  if t && t is a 'unit'
+    top t
+
+  if l && l is a 'unit'
+    left l
+
+// TOUCHLESS
+// ----------------------------
+// Prevent selection of text or images.
+touchless()
+  multiprop(user-select, none)
+  -ms-touch-action none
+
+// SCROLLABLE
+// ----------------------------
+// Adds scroll to element
+scrollable()
+  overflow-y scroll
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style -ms-autohiding-scrollbar
+  -ms-scroll-rails railed
+  -ms-scroll-chaining chained
