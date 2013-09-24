@@ -67,6 +67,49 @@ bg()
   else
     background-color rgb(clr)
 
+// BACKGROUND with GRADIENT
+// ----------------------------
+
+// Usage
+//    bgg: vert #fff #000
+//    bgg: vert #fff 95% #000 15%
+//    bgg: rad #fff 95% #000 15%
+bgg()
+  type = arguments[0]
+
+  fromColor = arguments[1]
+  fromPos = arguments[2] is a 'unit' ? arguments[2] : 0%
+
+  toColor = arguments[2] is a 'unit' ? arguments[3] : arguments[2]
+  toPos = arguments[4] is a 'unit' ? arguments[4] : 100%
+
+  if type is 'vert'
+    background fromColor
+    background -moz-linear-gradient(top, fromColor fromPos, toColor toPos)
+    background -webkit-gradient(linear, left top, left bottom, color-stop(fromPos, fromColor), color-stop(toPos, toColor))
+    background -webkit-linear-gradient(top, fromColor fromPos, toColor toPos)
+    background -o-linear-gradient(top, fromColor fromPos, toColor toPos)
+    background -ms-linear-gradient(top, fromColor fromPos, toColor toPos)
+    background linear-gradient(to bottom, fromColor fromPos, toColor toPos)
+  
+  if type is 'hor'
+    background fromColor
+    background -moz-linear-gradient(left, fromColor fromPos, toColor toPos)
+    background -webkit-gradient(linear, left top, right top, color-stop(fromPos, fromColor), color-stop(toPos, toColor))
+    background -webkit-linear-gradient(left, fromColor fromPos, toColor toPos)
+    background -o-linear-gradient(left, fromColor fromPos, toColor toPos)
+    background -ms-linear-gradient(left, fromColor fromPos, toColor toPos)
+    background linear-gradient(to right, fromColor fromPos, toColor toPos)
+
+  if type is 'rad'
+    background fromColor
+    background -moz-radial-gradient(center, ellipse cover, fromColor fromPos, toColor toPos)
+    background -webkit-gradient(radial, center center, fromPos, center center, toPos, color-stop(fromPos, fromColor), color-stop(toPos, toColor))
+    background -webkit-radial-gradient(center, ellipse cover, fromColor fromPos, toColor toPos)
+    background -o-radial-gradient(center, ellipse cover, fromColor fromPos, toColor toPos)
+    background -ms-radial-gradient(center, ellipse cover, fromColor fromPos, toColor toPos)
+    background radial-gradient(ellipse at center, fromColor fromPos, toColor toPos)
+
 // DIMENTIONS
 // ----------------------------
 

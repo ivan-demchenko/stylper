@@ -61,6 +61,10 @@ background-color: rgba(255,255,255,0.30);
 background-color: #f00;
 ```
 
+### `bgg`
+
+Usage is simple: `bgg: [vert | hor | rag] [colorFrom] [position] [colorTo] [position]`
+
 ### `dims`
 
 Input
