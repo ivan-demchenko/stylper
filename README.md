@@ -1,4 +1,4 @@
-Stylus Helper
+Stylper
 =============
 
 Stylus Helper is a small helper for your Stylus files that would make your life a little easier.

@@ -1,6 +1,6 @@
 {
-  "name": "stylHelper",
-  "version": "0.0.1",
+  "name": "stylper",
+  "version": "0.2.0",
   "description": "Helper for stylus projects",
   "main": "helper.styl",
   "scripts": {
