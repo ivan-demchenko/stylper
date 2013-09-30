@@ -1,7 +1,7 @@
 Stylper
 =============
 
-Stylus Helper is a small helper for your Stylus files that would make your life a little easier.
+It is a small helper for your Stylus files that would make your life a little easier.
 
 ### How did it happen?
 
